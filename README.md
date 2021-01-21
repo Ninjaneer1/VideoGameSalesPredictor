@@ -6,6 +6,7 @@ using some descriptors along with critic and user data.
 
 The data used in this notebook was found on Kaggle, at: 
   https://www.kaggle.com/kendallgillies/video-game-sales-and-ratings
+  
 There is only critic and user data for about half of the available video game data, but this still leaves a lot to work with.
 
 The models did best when attemping to predict the global sales. There are a lot outliers in the sales data and the 
@@ -15,11 +16,11 @@ Scaling is performed to the numeric data prior to fiting the models. The categor
 most useful was reduced to 50 unique values by re-bagging, or renaming the least frequent elements to  "other".
 
 Tools Used:
-From scikit-learn I used XGBoost Regressor, Lasso and ElasticNet Regressors, and a KNN Regressor. 
-  Preprocessing and organization is handled with StandardScaler, and ColumnTransformer and Pipeline.
-  GridSeachCV is used for iteration and parameter tuning.  
-Seaborn is the main library used for visuals. 
-Pandas and Numpy handle my data frames and computation. 
+ - From scikit-learn I used XGBoost Regressor, Lasso and ElasticNet Regressors, and a KNN Regressor. 
+   - Preprocessing and organization is handled with StandardScaler, and ColumnTransformer and Pipeline.
+   - GridSeachCV is used for iteration and parameter tuning.  
+ - Seaborn is the main library used for visuals. 
+ - Pandas and Numpy handle my data frames and computation. 
 
 Future Goals:
  - I believe that experimenting futher with SVM might be fruitfull. 

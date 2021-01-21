@@ -10,8 +10,10 @@ The data used in this notebook was found on Kaggle, at:
 There is only critic and user data for about half of the available video game data, but this still leaves a lot to work with.
 
 The models did best when attemping to predict the global sales. There are a lot outliers in the sales data and the 
-distribution are very non-normal The sales data is log-transformed to help gather it into a managable range, and
-from there, the correlations with the critic and user data can be found. Multicolinearlity is addressed using VIF.
+distribution are very non-normal. Droping the outliers was tested by dropping outside 90th to 99.9th percentiles.
+This may have improved the models from a linear regression standpoint, but is more harmful, I think, from the categorical 
+contributions. The sales data is log-transformed to help gather it into a managable range, and
+from there, the correlations with the critic and user data are a little more visible. Multicolinearlity is addressed using VIF.
 Scaling is performed to the numeric data prior to fiting the models. The categorical data that I found to be the
 most useful was reduced to 50 unique values by re-bagging, or renaming the least frequent elements to  "other".
 
@@ -23,7 +25,9 @@ Tools Used:
  - Pandas and Numpy handle my data frames and computation. 
 
 Future Goals:
- - I believe that experimenting futher with SVM might be fruitfull. 
+ - I believe that experimenting futher with SVM, or maybe neural nets might be fruitfull. 
+ - Perhaps these model would work better on subsets of the data (i.e. just 'Playstation' or "XBox")
+ - Maybe there is a subset of critic and user data that make for modeling better predicators.
  - Using other methods for dimension reduction and primary component anylsis could be implemented. 
  - Seeking other data sources to merge with this set.
  - Find other ways to prepare data, futher tune models, implement other models, or gather other insights.
